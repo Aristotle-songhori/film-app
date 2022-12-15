@@ -1,10 +1,10 @@
 package com.aristotele.film.ui.register
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import com.aristotele.film.R
@@ -14,8 +14,12 @@ import com.aristotele.film.utils.StoreUserData
 import com.aristotele.film.utils.showInvisible
 import com.aristotele.film.viewmodel.RegisterViewModel
 import com.google.android.material.snackbar.Snackbar
+import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
+
+
+@AndroidEntryPoint
 class RegisterFragment : Fragment() {
     //Binding
     private lateinit var binding: FragmentRegisterBinding
@@ -26,10 +30,15 @@ class RegisterFragment : Fragment() {
     @Inject
     lateinit var body: BodyRegister
 
+
     //Other
     private val viewModel: RegisterViewModel by viewModels()
 
-    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+    override fun onCreateView(
+        inflater: LayoutInflater,
+        container: ViewGroup?,
+        savedInstanceState: Bundle?
+    ): View {
         binding = FragmentRegisterBinding.inflate(inflater, container, false)
         return binding.root
     }
@@ -49,7 +58,8 @@ class RegisterFragment : Fragment() {
                     body.email = email
                     body.password = password
                 } else {
-                    Snackbar.make(view, getString(R.string.fillAllFields), Snackbar.LENGTH_SHORT).show()
+                    Snackbar.make(view, getString(R.string.fillAllFields), Snackbar.LENGTH_SHORT)
+                        .show()
                 }
                 //Send data
                 viewModel.sendRegisterUser(body)

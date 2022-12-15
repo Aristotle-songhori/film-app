@@ -12,10 +12,11 @@
         <action
             android:id="@+id/action_splashFragment_to_registerFragment"
             app:destination="@id/registerFragment" />
-        <action
-            android:id="@+id/action_splashFragment_to_homeFragment2"
-            app:destination="@id/homeFragment2" />
-    </fragment>
+       </fragment>
+    <action
+        android:id="@+id/action_splashFragment_to_homeFragment2"
+        app:destination="@id/homeFragment2" />
+
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.aristotele.film.ui.register.RegisterFragment"

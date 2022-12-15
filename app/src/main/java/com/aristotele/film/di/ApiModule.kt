@@ -15,7 +15,6 @@ import retrofit2.converter.gson.GsonConverterFactory
 import java.util.concurrent.TimeUnit
 import javax.inject.Singleton
 
-
 @Module
 @InstallIn(SingletonComponent::class)
 object ApiModule {
@@ -40,14 +39,20 @@ object ApiModule {
 
     @Provides
     @Singleton
-    fun provideClient(time: Long, interceptor: HttpLoggingInterceptor) =
-        OkHttpClient.Builder().addInterceptor(interceptor).writeTimeout(time, TimeUnit.SECONDS)
-            .readTimeout(time, TimeUnit.SECONDS).connectTimeout(time, TimeUnit.SECONDS).build()
+    fun provideClient(time: Long, interceptor: HttpLoggingInterceptor) = OkHttpClient.Builder()
+        .addInterceptor(interceptor)
+        .writeTimeout(time, TimeUnit.SECONDS)
+        .readTimeout(time, TimeUnit.SECONDS)
+        .connectTimeout(time, TimeUnit.SECONDS)
+        .build()
 
     @Provides
     @Singleton
     fun provideRetrofit(baseUrl: String, gson: Gson, client: OkHttpClient): ApiServices =
-        Retrofit.Builder().baseUrl(baseUrl).client(client)
-            .addConverterFactory(GsonConverterFactory.create(gson)).build()
+        Retrofit.Builder()
+            .baseUrl(baseUrl)
+            .client(client)
+            .addConverterFactory(GsonConverterFactory.create(gson))
+            .build()
             .create(ApiServices::class.java)
 }
