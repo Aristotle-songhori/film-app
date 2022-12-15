@@ -21,10 +21,8 @@ class SplashFragment : Fragment() {
     //Binding
     private lateinit var binding: FragmentSplashBinding
 
-
     @Inject
     lateinit var storeUserData : StoreUserData
-
 
 
     override fun onCreateView(
@@ -35,9 +33,6 @@ class SplashFragment : Fragment() {
         // Inflate the layout for this fragment
         return binding.root
     }
-
-
-
 
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

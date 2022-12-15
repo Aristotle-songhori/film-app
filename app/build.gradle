@@ -6,11 +6,9 @@ buildscript {
         google()
     }
     dependencies {
-
         classpath "androidx.navigation.safeargs:androidx.navigation.safeargs.gradle.plugin:2.5.3"
         classpath "org.jetbrains.kotlin:kotlin-serialization:1.7.21"
         classpath 'com.google.dagger:hilt-android-compiler:2.44.2'
-
     }
 }
 //====111111111111111111111111111111111111============================================================================================
@@ -130,7 +128,9 @@ dependencies {
     //DataStore
     implementation "androidx.datastore:datastore-preferences:1.0.0"
     //Dynamic sizes
+    // کتابخانه شخصی آقای مهندس که آموزش ازش خریدیم برای ریسایز کردن اندازه ها در هر لزولوشن خاص
     implementation 'com.github.MrNouri:DynamicSizes:1.0'
     //other
     implementation 'me.relex:circleindicator:2.1.6'
+
 }

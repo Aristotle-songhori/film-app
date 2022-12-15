@@ -24,14 +24,18 @@ class RegisterFragment : Fragment() {
     //Binding
     private lateinit var binding: FragmentRegisterBinding
 
+    //لازم داریم باید اینجکت کنیم که توش بنویسیم کاربر ثبت نام کرده
     @Inject
     lateinit var userData: StoreUserData
 
+    //لازم داریم باید اینجکت کنیم تابتونیم داده ها رو بفرستیم به هاست
+    //چون در bodyذخیره میشه دیگه
     @Inject
     lateinit var body: BodyRegister
 
 
     //Other
+    //اینم ویو مدله که باید باشه
     private val viewModel: RegisterViewModel by viewModels()
 
     override fun onCreateView(
@@ -54,15 +58,18 @@ class RegisterFragment : Fragment() {
                 val password = passwordEdt.text.toString()
                 //Validation
                 if (name.isNotEmpty() || email.isNotEmpty() || password.isNotEmpty()) {
+
                     body.name = name
                     body.email = email
                     body.password = password
+
+                    //Send data
+                    viewModel.sendRegisterUser(body)
+
                 } else {
-                    Snackbar.make(view, getString(R.string.fillAllFields), Snackbar.LENGTH_SHORT)
-                        .show()
+                    Snackbar.make(view, getString(R.string.fillAllFields), Snackbar.LENGTH_SHORT).show()
                 }
-                //Send data
-                viewModel.sendRegisterUser(body)
+
                 //Loading
                 viewModel.loading.observe(viewLifecycleOwner) { isShown ->
                     if (isShown) {
