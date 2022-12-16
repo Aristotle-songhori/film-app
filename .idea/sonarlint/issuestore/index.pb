@@ -29,17 +29,19 @@ h
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-h
-8app/src/main/java/com/aristotele/film/api/ApiServices.kt,6\4\649e6b8afe4f5f88c2e6921c599bbbebe08a28f7
 l
 <app/src/main/java/com/aristotele/film/models/BodyRegister.kt,e\5\e545aa9c56b08525f046fc7e20b9d9717b7eaad5
 d
 4app/src/main/java/com/aristotele/film/utils/MyApp.kt,6\8\68006ccd962a5a3da21a2469a5dfe7b175753883
-v
-Fapp/src/main/java/com/aristotele/film/repository/RegisterRepository.kt,8\c\8cc4dbbacbf9070d96083f1381dd692149dc39ed
 t
 Dapp/src/main/java/com/aristotele/film/viewmodel/RegisterViewModel.kt,e\9\e90fbae3b4c878f8ba9fa7e9cbdc07b114a21f82
 p
 @app/src/main/java/com/aristotele/film/models/ResponseRegister.kt,a\e\aefacb8e6ee6cbd058b70d49a471c6627864d1b6
 l
 <app/src/main/java/com/aristotele/film/utils/StoreUserData.kt,2\b\2bc03a99f42c7de8dfaf6884a8fcfca76427d89a
+q
+Aapp/src/main/java/com/aristotele/film/ui/splash/SplashFragment.kt,b\f\bf8f88879373f401c4b9c49367c75b31d90fc031
+P
+ app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
+i
+9app/src/main/java/com/aristotele/film/utils/Extensions.kt,f\4\f42295ae3084573e7224c64f33bf2220898e2e07

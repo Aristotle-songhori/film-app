@@ -1,4 +1,4 @@
-package com.aristotele.film.viewmodel
+package com.aristotele.film.ui.viewmodel
 
 import android.util.Log
 import androidx.lifecycle.MutableLiveData

@@ -1,10 +1,11 @@
 package com.aristotele.film.api
 
+import academy.nouri.s1_project.models.home.ResponseGenresList
+import academy.nouri.s1_project.models.home.ResponseMoviesList
 import com.aristotele.film.models.BodyRegister
 import com.aristotele.film.models.ResponseRegister
 import retrofit2.Response
-import retrofit2.http.Body
-import retrofit2.http.POST
+import retrofit2.http.*
 
 
 /**
@@ -13,7 +14,6 @@ import retrofit2.http.POST
  */
 
 interface ApiServices {
-
     /**
      * در زیر یه ساسپند فانکشن میبینید که یه درخواست پست رو مدیریت میکنه
      * داده هایی که باید ارسال بشه به شکل یه آبجکت داده شده به اسم بدنه
@@ -26,7 +26,23 @@ interface ApiServices {
      * و مقداری که میگیریم هم همونجا تعریف کردیم که میشه
      * ResponseRegister
      */
-    @POST(value = "register")
+    @POST("register")
     suspend fun registerUser(@Body body: BodyRegister): Response<ResponseRegister>
+
+    @GET("genres/{genre_id}/movies")
+    suspend fun moviesTopList(@Path("genre_id") id: Int): Response<ResponseMoviesList>
+
+   @GET("genres")
+    suspend fun genresList(): Response<ResponseGenresList>
+
+    @GET("movies")
+    suspend fun moviesLastList(): Response<ResponseMoviesList>
+
+    @GET("movies")
+    suspend fun searchMovie(@Query("q") name: String): Response<ResponseMoviesList>
+
+//    @GET("movies/{movie_id}")
+//    suspend fun detailMovie(@Path("movie_id") id: Int): Response<ResponseDetail>
+//
 
 }

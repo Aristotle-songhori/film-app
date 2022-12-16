@@ -9,6 +9,7 @@ import javax.inject.Inject
  * که میاد درخواست رجیستر کال میکنه
  * و باید حتما اینترفیس سرویس رو اینجکت کنیم که داشته باشیم
  */
-class RegisterRepository @Inject constructor( private val api: ApiServices) {
-    suspend fun registerUser(body: BodyRegister) = api.registerUser(body)
-}
+class HomeRepository @Inject constructor(private val api: ApiServices) {
+    suspend fun topMoviesList(id: Int) = api.moviesTopList(id)
+    suspend fun genresList() = api.genresList()
+    suspend fun lastMoviesList() = api.moviesLastList()}

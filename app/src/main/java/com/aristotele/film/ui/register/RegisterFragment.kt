@@ -12,7 +12,7 @@ import com.aristotele.film.databinding.FragmentRegisterBinding
 import com.aristotele.film.models.BodyRegister
 import com.aristotele.film.utils.StoreUserData
 import com.aristotele.film.utils.showInvisible
-import com.aristotele.film.viewmodel.RegisterViewModel
+import com.aristotele.film.ui.viewmodel.RegisterViewModel
 import com.google.android.material.snackbar.Snackbar
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
