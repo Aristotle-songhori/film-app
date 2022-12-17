@@ -33,8 +33,6 @@ l
 <app/src/main/java/com/aristotele/film/models/BodyRegister.kt,e\5\e545aa9c56b08525f046fc7e20b9d9717b7eaad5
 d
 4app/src/main/java/com/aristotele/film/utils/MyApp.kt,6\8\68006ccd962a5a3da21a2469a5dfe7b175753883
-t
-Dapp/src/main/java/com/aristotele/film/viewmodel/RegisterViewModel.kt,e\9\e90fbae3b4c878f8ba9fa7e9cbdc07b114a21f82
 p
 @app/src/main/java/com/aristotele/film/models/ResponseRegister.kt,a\e\aefacb8e6ee6cbd058b70d49a471c6627864d1b6
 l
@@ -45,3 +43,12 @@ P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 i
 9app/src/main/java/com/aristotele/film/utils/Extensions.kt,f\4\f42295ae3084573e7224c64f33bf2220898e2e07
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+r
+Bapp/src/main/java/com/aristotele/film/repository/HomeRepository.kt,8\e\8e532f33b0ba6e8df791c7160429ac6688a0dc1a
+u
+Eapp/src/main/java/com/aristotele/film/ui/register/RegisterFragment.kt,6\f\6f60f45ff3d76d2a8a657011ce3a4aad8172659c
+w
+Gapp/src/main/java/com/aristotele/film/ui/viewmodel/RegisterViewModel.kt,c\1\c1906813505c7f126dd94826cf0aeeede7f0316e

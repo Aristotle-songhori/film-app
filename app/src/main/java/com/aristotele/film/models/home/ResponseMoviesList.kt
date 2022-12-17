@@ -1,4 +1,4 @@
-package academy.nouri.s1_project.models.home
+package com.aristotele.film.models.home
 
 import com.google.gson.annotations.SerializedName
 

@@ -1,7 +1,7 @@
 package com.aristotele.film.ui.viewmodel
 
-import academy.nouri.s1_project.models.home.ResponseGenresList
-import academy.nouri.s1_project.models.home.ResponseMoviesList
+import com.aristotele.film.models.home.ResponseGenresList
+import com.aristotele.film.models.home.ResponseMoviesList
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope

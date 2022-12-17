@@ -1,7 +1,7 @@
 package com.aristotele.film.api
 
-import academy.nouri.s1_project.models.home.ResponseGenresList
-import academy.nouri.s1_project.models.home.ResponseMoviesList
+import com.aristotele.film.models.home.ResponseGenresList
+import com.aristotele.film.models.home.ResponseMoviesList
 import com.aristotele.film.models.BodyRegister
 import com.aristotele.film.models.ResponseRegister
 import retrofit2.Response

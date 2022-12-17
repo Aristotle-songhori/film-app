@@ -38,8 +38,8 @@
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />
     <fragment
-        android:id="@+id/serchFragment"
-        android:name="com.aristotele.film.ui.serch.SerchFragment"
+        android:id="@+id/searchFragment"
+        android:name="com.aristotele.film.ui.search.SearchFragment"
         android:label="fragment_serch"
-        tools:layout="@layout/fragment_serch" />
+        tools:layout="@layout/fragment_search" />
 </navigation>

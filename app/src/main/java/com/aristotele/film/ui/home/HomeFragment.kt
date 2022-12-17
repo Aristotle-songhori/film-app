@@ -147,14 +147,9 @@ class HomeFragment : Fragment() {
             }
             //Click
             lastMoviesAdapter.setOnItemClickListener {
-                val direction = HomeFragmentDirections.actionToDetail(it.id!!.toInt())
-                findNavController().navigate(direction)
+                //val direction = HomeFragmentDirections.actionToDetail(it.id!!.toInt())
+                //findNavController().navigate(direction)
             }
-
-
-
-
-
 
 
 

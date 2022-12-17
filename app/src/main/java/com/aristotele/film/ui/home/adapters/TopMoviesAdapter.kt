@@ -1,7 +1,7 @@
 package academy.nouri.s1_project.ui.home.adapters
 
 
-import academy.nouri.s1_project.models.home.ResponseMoviesList.*
+import com.aristotele.film.models.home.ResponseMoviesList.*
 import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.ViewGroup
