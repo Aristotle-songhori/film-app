@@ -5,56 +5,117 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.content.ContextCompat
+import androidx.fragment.app.viewModels
+import androidx.lifecycle.lifecycleScope
+import androidx.navigation.fragment.findNavController
+import androidx.navigation.fragment.navArgs
+import androidx.recyclerview.widget.LinearLayoutManager
+import coil.load
 import com.aristotele.film.R
+import com.aristotele.film.databinding.FragmentDetailBinding
+import com.aristotele.film.db.MovieEntity
+import com.aristotele.film.ui.viewmodel.DetailViewModel
+import com.aristotele.film.utils.initRecycler
+import com.aristotele.film.utils.showInvisible
+import dagger.hilt.android.AndroidEntryPoint
+import javax.inject.Inject
 
-// TODO: Rename parameter arguments, choose names that match
-// the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
-private const val ARG_PARAM1 = "param1"
-private const val ARG_PARAM2 = "param2"
-
-/**
- * A simple [Fragment] subclass.
- * Use the [DetailFragment.newInstance] factory method to
- * create an instance of this fragment.
- */
+@AndroidEntryPoint
 class DetailFragment : Fragment() {
-    // TODO: Rename and change types of parameters
-    private var param1: String? = null
-    private var param2: String? = null
+    //Binding
+    private lateinit var binding: com.aristotele.film.databinding.FragmentDetailBinding
+
+    @Inject
+    lateinit var imagesAdapter: ImagesAdapter
+
+    @Inject
+    lateinit var entity: MovieEntity
+
+    //Other
+    private var movieID = 0
+    private val viewModel: DetailViewModel by viewModels()
+    private val args: DetailFragmentArgs by navArgs()
+
+    override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View {
+        binding = FragmentDetailBinding.inflate(layoutInflater)
+        return binding.root
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        arguments?.let {
-            param1 = it.getString(ARG_PARAM1)
-            param2 = it.getString(ARG_PARAM2)
+        //Get data
+        movieID = args.movieID
+        //Call api
+        if (movieID > 0) {
+            viewModel.loadDetailMovie(movieID)
         }
     }
 
-    override fun onCreateView(
-        inflater: LayoutInflater, container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_detail, container, false)
-    }
-
-    companion object {
-        /**
-         * Use this factory method to create a new instance of
-         * this fragment using the provided parameters.
-         *
-         * @param param1 Parameter 1.
-         * @param param2 Parameter 2.
-         * @return A new instance of fragment DetailFragment.
-         */
-        // TODO: Rename and change types and number of parameters
-        @JvmStatic
-        fun newInstance(param1: String, param2: String) =
-            DetailFragment().apply {
-                arguments = Bundle().apply {
-                    putString(ARG_PARAM1, param1)
-                    putString(ARG_PARAM2, param2)
+    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
+        super.onViewCreated(view, savedInstanceState)
+        //InitViews
+        binding.apply {
+            //Load data
+            viewModel.detailMovie.observe(viewLifecycleOwner) { response ->
+                posterBigImg.load(response.poster)
+                posterNormalImg.load(response.poster) {
+                    crossfade(true)
+                    crossfade(800)
+                }
+                movieNameTxt.text = response.title
+                movieRateTxt.text = response.imdbRating
+                movieTimeTxt.text = response.runtime
+                movieDateTxt.text = response.released
+                movieSummaryInfo.text = response.plot
+                movieActorsInfo.text = response.actors
+                //Images Adapter
+                imagesAdapter.differ.submitList(response.images)
+                imagesRecyclerView.initRecycler(
+                    LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false),
+                    imagesAdapter
+                )
+                //Fav click
+                favImg.setOnClickListener {
+                    entity.id = movieID
+                    entity.poster = response.poster.toString()
+                    entity.title = response.title.toString()
+                    entity.rate = response.rated.toString()
+                    entity.country = response.country.toString()
+                    entity.year = response.year.toString()
+                    viewModel.favoriteMovie(movieID, entity)
                 }
             }
+            //Loading
+            viewModel.loading.observe(viewLifecycleOwner) {
+                if (it) {
+                    detailLoading.showInvisible(true)
+                    detailScrollView.showInvisible(false)
+                } else {
+                    detailLoading.showInvisible(false)
+                    detailScrollView.showInvisible(true)
+                }
+            }
+            //Default fav icon color
+            lifecycleScope.launchWhenCreated {
+                if (viewModel.existsMovie(movieID)) {
+                    favImg.setColorFilter(ContextCompat.getColor(requireContext(), R.color.scarlet))
+                } else {
+                    favImg.setColorFilter(ContextCompat.getColor(requireContext(), R.color.philippineSilver))
+                }
+            }
+            //Change image with click
+            viewModel.isFavorite.observe(viewLifecycleOwner){
+                if (it) {
+                    favImg.setColorFilter(ContextCompat.getColor(requireContext(), R.color.scarlet))
+                } else {
+                    favImg.setColorFilter(ContextCompat.getColor(requireContext(), R.color.philippineSilver))
+                }
+            }
+            //Back
+            backImg.setOnClickListener {
+                findNavController().navigateUp()
+            }
+        }
     }
 }

@@ -14,26 +14,40 @@
             app:destination="@id/registerFragment" />
        </fragment>
     <action
-        android:id="@+id/action_splashFragment_to_homeFragment2"
-        app:destination="@id/homeFragment2" />
-
+        android:id="@+id/actionToHome"
+        app:destination="@id/homeFragment" />
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.aristotele.film.ui.register.RegisterFragment"
         android:label="fragment_register"
         tools:layout="@layout/fragment_register" />
+
+
+
     <fragment
-        android:id="@+id/homeFragment2"
+        android:id="@+id/homeFragment"
         android:name="com.aristotele.film.ui.home.HomeFragment"
         android:label="fragment_home"
         tools:layout="@layout/fragment_home" />
+
+
+
+
+    <action
+        android:id="@+id/actionToDetail"
+        app:destination="@id/detailFragment" />
+
     <fragment
         android:id="@+id/detailFragment"
         android:name="com.aristotele.film.ui.detail.DetailFragment"
         android:label="fragment_detail"
-        tools:layout="@layout/fragment_detail" />
+        tools:layout="@layout/fragment_detail" >
+        <argument
+            android:name="movieID"
+            app:argType="integer" />
+    </fragment>
     <fragment
-        android:id="@+id/favoriteFragment2"
+        android:id="@+id/favoriteFragment"
         android:name="com.aristotele.film.ui.favorite.FavoriteFragment"
         android:label="fragment_favorite"
         tools:layout="@layout/fragment_favorite" />

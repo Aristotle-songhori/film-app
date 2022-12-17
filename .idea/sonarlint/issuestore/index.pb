@@ -25,16 +25,10 @@ h
 build.gradle,f\0\f07866736216be0ee2aba49e392191aeae700a35
 @
 app/build.gradle,f\4\f4a01d6a4fcb971362ec00a83903fd3902f52164
-l
-<app/src/main/java/com/aristotele/film/models/BodyRegister.kt,e\5\e545aa9c56b08525f046fc7e20b9d9717b7eaad5
 d
 4app/src/main/java/com/aristotele/film/utils/MyApp.kt,6\8\68006ccd962a5a3da21a2469a5dfe7b175753883
-p
-@app/src/main/java/com/aristotele/film/models/ResponseRegister.kt,a\e\aefacb8e6ee6cbd058b70d49a471c6627864d1b6
 l
 <app/src/main/java/com/aristotele/film/utils/StoreUserData.kt,2\b\2bc03a99f42c7de8dfaf6884a8fcfca76427d89a
-q
-Aapp/src/main/java/com/aristotele/film/ui/splash/SplashFragment.kt,b\f\bf8f88879373f401c4b9c49367c75b31d90fc031
 P
  app/src/main/AndroidManifest.xml,8\c\8c55c3ccc257e5907959013f99656e4c8ec3903e
 i
@@ -42,3 +36,17 @@ i
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
+h
+8app/src/main/java/com/aristotele/film/utils/Constants.kt,2\e\2eb2ebed7aac2419e75d4602bdcc28950aeb028c
+r
+Bapp/src/main/java/com/aristotele/film/repository/HomeRepository.kt,8\e\8e532f33b0ba6e8df791c7160429ac6688a0dc1a
+u
+Eapp/src/main/java/com/aristotele/film/ui/register/RegisterFragment.kt,6\f\6f60f45ff3d76d2a8a657011ce3a4aad8172659c
+s
+Capp/src/main/java/com/aristotele/film/ui/register/RegisterModule.kt,8\7\8724ad61bbd0b3f25d03e6fb5b9f78ecd94d577f
+v
+Fapp/src/main/java/com/aristotele/film/repository/RegisterRepository.kt,8\c\8cc4dbbacbf9070d96083f1381dd692149dc39ed
+w
+Gapp/src/main/java/com/aristotele/film/ui/viewmodel/RegisterViewModel.kt,c\1\c1906813505c7f126dd94826cf0aeeede7f0316e
+e
+5app/src/main/java/com/aristotele/film/di/ApiModule.kt,d\9\d9051fa9da7d4ad217aa1285d48ea6f8a3e05426

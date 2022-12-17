@@ -45,8 +45,8 @@ class FavoriteFragment : Fragment() {
             }
             //Click
             favoriteAdapter.setOnItemClickListener {
-                //val direction = FavoriteFragmentDirections.actionToDetail(it.id)
-                //findNavController().navigate(direction)
+                val direction = FavoriteFragmentDirections.actionToDetail(it.id)
+                findNavController().navigate(direction)
             }
             //Empty
             viewModel.empty.observe(viewLifecycleOwner) {

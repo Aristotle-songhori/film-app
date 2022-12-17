@@ -61,10 +61,14 @@ import javax.inject.Inject
                     searchAdapter.setData(it.data)
                     moviesRecycler.initRecycler(LinearLayoutManager(requireContext()), searchAdapter)
                 }
+
+
+
+
                 //Click
                 searchAdapter.setOnItemClickListener {
-                   // val direction = SearchFragmentDirections.actionToDetail(it.id!!.toInt())
-                   // findNavController().navigate(direction)
+                    val direction = SearchFragmentDirections.actionToDetail(it.id!!.toInt())
+                    findNavController().navigate(direction)
                 }
 
 

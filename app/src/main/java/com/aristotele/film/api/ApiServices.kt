@@ -1,5 +1,6 @@
 package com.aristotele.film.api
 
+import com.aristotele.film.models.detail.ResponseDetail
 import com.aristotele.film.models.home.ResponseGenresList
 import com.aristotele.film.models.home.ResponseMoviesList
 import com.aristotele.film.models.register.BodyRegister
@@ -41,8 +42,8 @@ interface ApiServices {
     @GET("movies")
     suspend fun searchMovie(@Query("q") name: String): Response<ResponseMoviesList>
 
-//    @GET("movies/{movie_id}")
-//    suspend fun detailMovie(@Path("movie_id") id: Int): Response<ResponseDetail>
-//
+    @GET("movies/{movie_id}")
+    suspend fun detailMovie(@Path("movie_id") id: Int): Response<ResponseDetail>
+
 
 }

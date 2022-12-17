@@ -52,6 +52,7 @@ class LastMoviesAdapter @Inject constructor() : RecyclerView.Adapter<LastMoviesA
                     crossfade(800)
                 }
                 //Click
+                //2 تا پایینی ها برای اینه
                 root.setOnClickListener {
                     onItemClickListener?.let {
                         it(item)
@@ -61,11 +62,27 @@ class LastMoviesAdapter @Inject constructor() : RecyclerView.Adapter<LastMoviesA
         }
     }
 
+
+
+
+
+    /**
+     * از لاندا اکسپرشن استفاده میکنیم برای ساخت کلیک روی گزینه ها
+     */
     private var onItemClickListener: ((Data) -> Unit)? = null
 
+    /**
+     * یه data رو بفرست و هیچی لازم نیست بازگشت بدی
+     */
     fun setOnItemClickListener(listener: (Data) -> Unit) {
         onItemClickListener = listener
     }
+
+
+
+
+
+
 
 
     /**

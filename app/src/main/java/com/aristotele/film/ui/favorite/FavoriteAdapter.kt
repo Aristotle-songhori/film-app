@@ -51,6 +51,11 @@ class FavoriteAdapter @Inject constructor() : RecyclerView.Adapter<FavoriteAdapt
         }
     }
 
+
+    /**
+     * از لاندا اکسپرشن استفاده میکنیم برای ساخت کلیک روی گزینه ها
+     */
+
     private var onItemClickListener: ((MovieEntity) -> Unit)? = null
 
     fun setOnItemClickListener(listener: (MovieEntity) -> Unit) {
