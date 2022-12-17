@@ -2,8 +2,8 @@ package com.aristotele.film.api
 
 import com.aristotele.film.models.home.ResponseGenresList
 import com.aristotele.film.models.home.ResponseMoviesList
-import com.aristotele.film.models.BodyRegister
-import com.aristotele.film.models.ResponseRegister
+import com.aristotele.film.models.register.BodyRegister
+import com.aristotele.film.models.register.ResponseRegister
 import retrofit2.Response
 import retrofit2.http.*
 

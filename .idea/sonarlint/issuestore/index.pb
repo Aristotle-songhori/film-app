@@ -17,10 +17,6 @@ A
 gradle.properties,2\a\2afbb999f001938c88fa43fc2ef52abf0f8213e4
 w
 Gapp/src/androidTest/java/com/aristotele/film/ExampleInstrumentedTest.kt,5\b\5b0d841e0443634cdbdc076ce224c0f49db0a1fd
-h
-8app/src/main/java/com/aristotele/film/utils/Constants.kt,2\e\2eb2ebed7aac2419e75d4602bdcc28950aeb028c
-s
-Capp/src/main/java/com/aristotele/film/ui/register/RegisterModule.kt,8\7\8724ad61bbd0b3f25d03e6fb5b9f78ecd94d577f
 ?
 settings.gradle,0\5\05efc8b1657769a27696d478ded1e95f38737233
 h
@@ -46,9 +42,3 @@ i
 :
 
 .gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
-r
-Bapp/src/main/java/com/aristotele/film/repository/HomeRepository.kt,8\e\8e532f33b0ba6e8df791c7160429ac6688a0dc1a
-u
-Eapp/src/main/java/com/aristotele/film/ui/register/RegisterFragment.kt,6\f\6f60f45ff3d76d2a8a657011ce3a4aad8172659c
-w
-Gapp/src/main/java/com/aristotele/film/ui/viewmodel/RegisterViewModel.kt,c\1\c1906813505c7f126dd94826cf0aeeede7f0316e

@@ -1,4 +1,4 @@
-package com.aristotele.film.models
+package com.aristotele.film.models.register
 
 import com.google.gson.annotations.SerializedName
 

@@ -4,8 +4,8 @@ import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.aristotele.film.models.BodyRegister
-import com.aristotele.film.models.ResponseRegister
+import com.aristotele.film.models.register.BodyRegister
+import com.aristotele.film.models.register.ResponseRegister
 import com.aristotele.film.repository.RegisterRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch

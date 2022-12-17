@@ -9,7 +9,7 @@ import androidx.fragment.app.viewModels
 import androidx.lifecycle.coroutineScope
 import com.aristotele.film.R
 import com.aristotele.film.databinding.FragmentRegisterBinding
-import com.aristotele.film.models.BodyRegister
+import com.aristotele.film.models.register.BodyRegister
 import com.aristotele.film.utils.StoreUserData
 import com.aristotele.film.utils.showInvisible
 import com.aristotele.film.ui.viewmodel.RegisterViewModel
